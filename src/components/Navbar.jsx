@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+
+
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu, AiIconName } from "react-icons/ai";
 import {COLOURS} from '../colours.js'

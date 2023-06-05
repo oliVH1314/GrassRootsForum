@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+
+
 import React from 'react'
 import tempVideo from '../Assets/tempVideo.mp4'
 import {COLOURS} from '../colours.js'

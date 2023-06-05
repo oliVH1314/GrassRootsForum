@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+
+
 import React from 'react'
 import Typed from 'react-typed';
 import {COLOURS} from '../colours.js'
