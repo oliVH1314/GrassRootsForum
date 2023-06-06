@@ -18,7 +18,7 @@ function Newsletter() {
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the form from refreshing the page
     if (isChecked && userName && email) {
-      Axios.post('http://localhost:3001/api/insert', {
+      Axios.post('https://grass-roots-forum-backend.herokuapp.com/', {
         username: userName,
         email: email,
         town: town,
