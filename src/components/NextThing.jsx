@@ -7,7 +7,7 @@ import {COLOURS} from '../colours.js'
 
 function NextThing() {
     return (
-        <div className='w-full bg-[white] py-16 px-4'>
+        <div className='w-full bg-[white] py-16 px-4' id="Events">
           <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
             <video className='w-[500px] mx-auto my-4 ml-0' controls>
               <source src={tempVideo} type="video/mp4" />

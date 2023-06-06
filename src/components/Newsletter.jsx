@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
-
 import React, { useState } from 'react';
+
 import Axios from 'axios';
 
 function Newsletter() {
@@ -17,7 +17,14 @@ function Newsletter() {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the form from refreshing the page
-    if (isChecked && userName && email) {
+
+    const missingFields = [];
+    if (!userName) missingFields.push('Name');
+    if (!email) missingFields.push('Email');
+    if (!town) missingFields.push('Town');
+    if (!postcode) missingFields.push('Postcode');
+
+    if (isChecked && missingFields.length === 0) {
       Axios.post('https://grassrootsforumsbackend.onrender.com/api/insert', {
         username: userName,
         email: email,
@@ -31,12 +38,16 @@ function Newsletter() {
           console.error('Error:', error);
         });
     } else {
-      alert('Please fill in all the required fields and accept the consent.');
+      const errorMessage = missingFields.length > 0
+        ? `Please fill in the following fields: ${missingFields.join(', ')} and accept the consent.`
+        : 'Please accept the consent.';
+
+      alert(errorMessage);
     }
   };
 
   return (
-    <div className="w-full py-16 text-white px-4 border-b-4 border-white">
+    <div className="w-full py-16 text-white px-4 border-b-4 border-white" id="Contact">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 my-4">
           <h1 className="text-4xl md:text-5xl font-bold py-[40px]">Contact Form</h1>
@@ -97,7 +108,6 @@ function Newsletter() {
             <div className="col-span-2 flex justify-center items-center">
               <button
                 className="w-64 py-3 my-6 text-white bg-[orange] rounded-md font-medium"
-                disabled={!isChecked || !userName || !email}
                 type="submit"
               >
                 Notify Me

@@ -13,7 +13,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="mx-auto py-16 lg:px-[100px] px-4 grid lg:grid-cols-3 lg:gap-[260px] gap-8 text-gray-300 text-center">
+    <div className="mx-auto py-16 lg:px-[100px] px-4 grid lg:grid-cols-3 lg:gap-[260px] gap-8 text-gray-300 text-center" id="About">
       <div>
         <h1 className="w-full text-3xl font-bold text-[orange]">
           Grass Roots Forum
