@@ -50,8 +50,8 @@ function Newsletter() {
     <div className="w-full py-16 text-white px-4 border-b-4 border-white" id="Contact">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 my-4">
-          <h1 className="text-4xl md:text-5xl font-bold py-[40px]">Contact Form</h1>
-          <p className="mr-[120px]">
+          <h1 className="text-4xl md:text-5xl font-bold py-[40px] text-center lg:mr-[120px]">Contact Form</h1>
+          <p className="lg:mr-[120px] text-center">
             Stay connected with Grassroots Forum. Complete this form to receive updates, event invitations, and join our
             community in shaping a better future together.
           </p>
