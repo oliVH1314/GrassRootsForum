@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 
-
 import React, { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { COLOURS } from "../colours.js";
@@ -36,33 +35,36 @@ const Navbar = () => {
           <span className="border-b-2 border-transparent hover:border-[orange]">Contact</span>
         </button>
       </ul>
-      <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+      <div className="block md:hidden" onClick={handleNav}>
+        {nav ? (
+          <AiOutlineClose size={20} className="hamburger-icon" />
+        ) : (
+          <AiOutlineMenu size={20} className="hamburger-icon" />
+        )}
       </div>
-      <div
-        className={`fixed left-0 top-0 w-[60%] h-full border-r border-r-[#10757f] bg-[#124059] duration-500 ${
-          nav ? "ease-in-out" : "ease-out"
-        }`}
-        style={{
-          transform: `translateX(${nav ? "0%" : "-100%"})`,
-        }}
-      >
-        <h1 className="w-full text-3xl font-bold text-[orange] m-4">Grass Roots Forum</h1>
-        <ul className="uppercase p-4">
+      <ul className={nav ? 'uppercase p-4 fixed left-0 top-0 w-[60%] h-full border-r border-r-[#10757f] bg-[#124059] ease-in-out duration-500' : 'ease-in-out duration-500 fixed left-[-100%]'}>
+      <h1 className="w-full text-3xl font-bold text-[orange] m-4">Grass Roots Forum</h1>
+          <li className='p-4 border-b border-[#10757f]'>
           <button className="p-4 border-b border-[#10757f] hover:text-[orange] transition-colors cursor-pointer border-none" onClick={() => scrollToSection("Home")}>
             <span className="border-b-2 border-transparent hover:border-[orange]">Home</span>
           </button>
+          </li>
+          <li className='p-4 border-b border-[#10757f]'>
           <button className="p-4 border-b border-[#10757f] hover:text-[orange] transition-colors cursor-pointer border-none" onClick={() => scrollToSection("About")}>
             <span className="border-b-2 border-transparent hover:border-[orange]">About</span>
           </button>
+          </li>
+          <li className='p-4 border-b border-[#10757f]'>
           <button className="p-4 border-b border-[#10757f] hover:text-[orange] transition-colors cursor-pointer border-none" onClick={() => scrollToSection("Events")}>
             <span className="border-b-2 border-transparent hover:border-[orange]">Events</span>
           </button>
+          </li>
+          <li className='p-4'>
           <button className="p-4 hover:text-[orange] transition-colors cursor-pointer border-none" onClick={() => scrollToSection("Contact")}>
             <span className="border-b-2 border-transparent hover:border-[orange]">Contact</span>
           </button>
-        </ul>
-      </div>
+          </li  >
+      </ul>
     </div>
   );
 };
